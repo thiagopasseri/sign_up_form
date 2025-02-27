@@ -6,7 +6,7 @@
   /* 2. Remove default margin */
   * {
     margin: 0;
-    border: 1px solid red;
+    /* border: 1px solid red; */
   }
   
   body {
@@ -47,48 +47,79 @@
     isolation: isolate;
   }
 
+:root {
+    --system-ui:  system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    --border-input-color: rgba(100, 100, 100, 0.2);
+}   
+
+
 
 body {
     display:flex;
     flex-direction: row;
+    height: 100vh;
+    font-family: Roboto, var(--system-ui);
 }
 
 .left-side {
     width: 30%;
-    /* display: flex; */
     align-items: center;
     min-width: 200px;
     position: relative;
 
-    /* padding-top: 0.1px;
-    padding-bottom: 0.1px; */
+    font-size: xxx-large;
+    font-family: "Macondo Swash Caps", serif ;
+    font-weight: 800;
+    color: white;
+
+    background-image: url(./imgs/leaves.jpg);
+    background-size: cover;
 }
 .right-side {
     width:70%;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    font-weight: 500;
+    font-size: 1.2em;
+    line-height: 1.2;
+
+    min-width: 580px;
+
+    background-color:rgb(242, 242, 242);
+}
+
+@media screen and (max-height: 570px) { /* Ajuste este valor conforme necessário */
+    .right-side {
+    display:block;
+}
 }
 
 .first-div{
-    height: 36%;
-    overflow: hidden;
+    flex: 1 1 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-height: 200px;
+
+    /* align-items: center; */
 
 } 
 
 .second-div {
-    height:32%;
-    background-color: red;
-    border: 2px solid yellow;
-    min-height: 200px;
-
-
+    /* background-color: red; */
+    /* border: 2px solid yellow; */
+    flex: 3 1 200px;
 }
+
+
 .third-div {
-    height: 32%;
     background-color: aquamarine;
 }
 
 
 .divisor {
-    height: 100vh;
+    height: 100%;
 }
 .black-strip{
     position: relative;
@@ -96,9 +127,9 @@ body {
 
     text-align: center;
     width: 100%;
-    height: 100px;
+    height: 140px;
     display: flex;
-    background-color: aqua;
+    background-color:rgba(0, 0, 0, 0.6);
     justify-content: center;
     align-items: center;
 }
@@ -106,23 +137,146 @@ body {
 form {
     display: flex;
     flex-direction: column;
-    align-content: flex-start;
+    margin-top:1em;
+
 }
 .form-row {
     display: flex;
-    border: 1px solid pink;
+    gap: 3em;
+    margin-bottom: 0.8em;
     /* height: 30px; */
+}
+
+input + span {
+    position: relative;
+  }
+
+
+/* input:required:invalid {
+    background-color: red;
+
+} */
+
+input:required:invalid + span::after {
+    content: "REQUIRED";
+
+
+    font-size: 0.7rem;
+    position: absolute;
+    color: rgb(203, 0, 0);
+    padding: 5px 10px;
+    top: -3.2em;
+    left: -5.5em;
+  }
+
+.teste {
+    display: flex;
 }
 
 .form-row > div {
     display: flex;
-    flex-direction: column;
-    width: 100%;
-}
-.first-div p {
+    flex-flow: row wrap;
+    align-items: baseline;
 
-    margin: 15vh 10% 0 2%;
+    width: 13em;
+}
+.first-div > p {
+    width: 80%;
+    min-width: 350px;
+    max-width: 650px;
+
+    align-self: flex-start;
+
+    padding-top: clamp(0.5em, 1em, 1em);
+    padding-left: 2em;
+
+}
+.second-div p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-weight: 400;
+    line-height: 1.2;
+} 
+
+button {
+    width: 200px;
+    margin-bottom: 1em;
 }
 
-.right-side > div {
+img {
+    height: 70%;
 }
+
+
+.black-strip > p {
+    margin-left: 0.3em;
+}
+
+label {
+    font-size: 0.55em;
+    font-weight: 500;
+    width: 10em;
+    /* color: white; */
+}
+
+input {
+    border: 1px solid var(--border-input-color);
+    border-radius: 5px;
+    width:30ch;
+}
+
+.shadow-div {
+    background-color: white;
+}
+.shadow-div > * {
+    padding-left: 2em;
+}
+
+.bottom-div {
+    padding-top: 1em;
+    padding-left: 2em;
+
+}
+button {
+    background-color: rgb(89, 112, 71);
+    border-radius: 0.3em;
+    height: 2em;
+    font-size: 0.8em;
+    font-weight: 500;
+    color: rgb(250, 255, 231);
+}
+
+input {
+    height: 2em;
+    padding-left: 0.5em;
+    font-weight: 400;
+    font-size: 0.7em;
+}
+
+input:focus {
+    background-color:rgba(213, 255, 241, 0.636)
+}
+
+input:hover {
+    background-color:rgba(237, 252, 247, 0.636)
+}
+
+span {
+    font-size: 0.7em;
+    font-weight: 400;
+    color:rgb(173, 0, 0);
+    padding-left: 0.4em;
+}
+
+
+
+/* input:invalid {
+    background-color:rgba(255, 210, 210, 0.636)
+} */
+/* 
+falta:
+
+- setar a fonte de dentro do input-text
+- colorir verde o que está valid e vermelho invalid (juntamente com os requireds)
+- estilizar o fundo dos inputs-text
+- dar uma reolhada no artigo de estilos de forms/input e aplicar uma coisinha ou outra */

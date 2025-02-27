@@ -4,58 +4,75 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Macondo+Swash+Caps&family=Oswald:wght@200..700&display=swap" rel="stylesheet"> 
     <link href="style.css" rel="stylesheet"></style>
   </head>
   <body>
     <div class="left-side divisor">
-      <div class="black-strip">LOGO AQUI!</div>
+      <div class="black-strip">
+        <img src="./imgs/odin-lined.png">
+        <p>ODIN</p>
+    </div>
     </div>
     <div class="right-side divisor">
       <div class="first-div">
         <p>
             This is not a real service! You know you need something like this in your life to help you realize your deepest dreams.
-            Sign up now to get started.
+            Sign up now to get started. <br><br>
             
             You know you want to
         </p>
       </div>
       <div class="second-div">
         <form action="" method="GET">
-            <div class="form-row">
-                <div>
-                    <label for="name">Name: *</label>
-                    <input type="text" id="name" name="name" required>
+            <div class="shadow-div">
+                <p>Let's do this!</p>
+                <div class="form-row">
+                    <div>
+                        <label for="name">FIRST NAME</label>
+                        <input type="text" id="name" name="name" required>
+                        <span></span>
+                    </div>
+                    <div>
+                        <label for="surname"> LAST NAME</label>
+                        <input type="text" id="surname" name="surname" required>
+                        <span></span>
+                    </div>
                 </div>
-                <div>
-                    <label for="surname"> Surname: *</label>
-                    <input type="text" id="surname" name="surname" required>
+                <div class="form-row">
+                    <div>
+                        <label for="email">EMAIL</label>
+                        <input type="email" id="email" name="email" required>
+                        <span></span>
+                    </div>
+                    <div>
+                        <label for="surname"> PHONE NUMBER</label>
+                        <input type="tel" id="phonenumber" name="phonenumber">
+                        <span></span>
+                    </div>
                 </div>
-            </div>
-            <div class="form-row">
-                <div>
-                    <label for="email">Email: *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div>
-                    <label for="surname"> Phone Number: *</label>
-                    <input type="tel" id="phonenumber" name="phonenumber">
-                </div>
-            </div>
 
-            <div class="form-row">
-                <div>
-                    <label for="paswword">Password: *</label>
-                    <input type="password" id="password" name="password" required>
-                </div>
-                <div>
-                    <label for="passord"> Repeat Password: *</label>
-                    <input type="password" id="password_confirm" name="password_confirm">
-                </div>
+                <div class="form-row">
+                    <div>
+                        <label for="paswword">PASSWORD</label>
+                        <input type="password" id="password" name="password" required>
+                        <span></span>
+                    </div>
+                    <div>
+                        <label for="passord"> CONFIRM PASSWORD</label>
+                        <input type="password" id="password_confirm" name="password_confirm" required>
+                        <span></span>
+                    </div>
+                </div>  
             </div>
-            
+            <div class="bottom-div">
+                <button type="submit">Create Account</button>
+                <p>Already have an account?<strong> Log in</strong></p>          
+            </div>
         </form>
       </div>
-      <div class="third-div"></div>
     </div>
   </body>
 </html>

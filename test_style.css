@@ -1,0 +1,25 @@
+div {
+    margin-top:200px;
+    margin-bottom: 20px;
+    display: flex;
+    flex-flow: row wrap;
+  }
+
+  input + span {
+    position: relative;
+  }
+  
+  input:required + span::after {
+    content: "required";
+    font-size: 0.7rem;
+    position: absolute;
+    color: white;
+    background-color: black;
+    padding: 5px 10px;
+    top: -26px;
+    left: -70px;
+    
+  }
+  label {
+    width: 100%;
+  }
